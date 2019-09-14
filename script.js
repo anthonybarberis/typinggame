@@ -54,6 +54,8 @@ var words = [
 
 ]
 
+var wordToType = words[Math.floor(Math.random() * words.length)];
+
 function init() {
-    document.getElementById('wordToType').innerHTML = words[Math.floor(Math.random()*words.length)]
+    document.getElementById('wordToType').innerHTML = wordToType
 }
