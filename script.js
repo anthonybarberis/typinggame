@@ -78,7 +78,7 @@ function countDown() {
 }
 
 function youLose() {
-    alert("You lose!\n\nFinal Score: " + score + "\n\nMax Time: " + maxTime)
+    alert("Game over!\n\nFinal Score: " + score + "\n\nMax Time: " + maxTime + "s")
     score = 0;
     init();    
 }
