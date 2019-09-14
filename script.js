@@ -1,4 +1,4 @@
-window.onload = init;
+//window.onload = init;
 
 var words = [
     'breathe',
@@ -57,7 +57,7 @@ var words = [
 var score = 0;
 var timeLeft = 0;
 var defaultTime = 5;
-var timer = setInterval(countDown, 100);
+var timer = "" //setInterval(countDown, 100);
 var wordToType = "";
 var maxTime = defaultTime;
 
@@ -83,6 +83,10 @@ function youLose() {
     init();    
 }
 
+document.getElementById('play').addEventListener('click', function () {
+    timer = setInterval(countDown, 100);
+    init();
+})
 
 function init() {
     randomWord();
