@@ -84,6 +84,7 @@ function youLose() {
 }
 
 document.getElementById('play').addEventListener('click', function () {
+    document.getElementById('instructions').setAttribute('style', "display: none;")
     timer = setInterval(countDown, 100);
     init();
 })
