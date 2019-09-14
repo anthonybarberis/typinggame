@@ -1,7 +1,59 @@
 window.onload = init;
 
+var words = [
+    'breathe',
+    'able',
+    'abrupt',
+    'stop',
+    'bottle',
+    'tail',
+    'utter',
+    'snotty',
+    'fine',
+    'teaching',
+    'guide',
+    'stick',
+    'tour',
+    'icy',
+    'incandescent',
+    'vengeful',
+    'bore',
+    'spare',
+    'unbecoming',
+    'agree',
+    'unable',
+    'apathetic',
+    'sigh',
+    'tip',
+    'sky',
+    'educated',
+    'train',
+    'example',
+    'earthquake',
+    'strap',
+    'decorous',
+    'foot',
+    'hapless',
+    'applaud',
+    'substantial',
+    'spotless',
+    'spurious',
+    'safe',
+    'lace',
+    'girl',
+    'flight',
+    'concerned',
+    'oranges',
+    'dislike',
+    'excite',
+    'sturdy',
+    'head',
+    'command',
+    'angle',
+    'ink',
+
+]
+
 function init() {
-    document.getElementById('coords').addEventListener('mouseover', function(event) {
-        this.innerHTML = event.clientX
-    })
+    document.getElementById('wordToType').innerHTML = words[Math.floor(Math.random()*words.length)]
 }
