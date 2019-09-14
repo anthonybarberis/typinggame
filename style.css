@@ -1,19 +1,30 @@
 main {
-    border: solid black 1px;
+    border: solid red 5px;
     max-width: 400px;
     padding: 20px;
     border-radius: 5px;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto;
 }
 
-section p {
-    float: left;
+p {
+    text-align: center;
+    margin: 40px 0 0 0;
 }
 
-#wordToType, #score {
-    border: solid blue 1px;
-    max-width: 100px;
-    margin: 50px;
+#wordToType, #score, #timer {
+    border: solid red 1px;
+    max-width: 300px;
+    margin: 0 auto 40px auto;
     padding: 10px;
     text-align: center;
+
 }
 
+input {
+    border: solid black 2px;
+    font-size: 1em;
+    max-width: 300px;
+    padding: 10px;
+}
