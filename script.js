@@ -55,7 +55,8 @@ var words = [
 ]
 
 var score = 0;
-var timeLeft = 5.0;
+var timeLeft = 0;
+var defaultTime = 10;
 var timer = setInterval(countDown, 100);
 var wordToType = ""
 
@@ -75,10 +76,16 @@ function countDown() {
     }
 }
 
-randomWord();
+function youLose() {
+    alert("You lose!\n\nFinal Score: " + score)
+    score = 0;
+    init();    
+}
+
 
 function init() {
-    document.getElementById('wordToType').innerHTML = wordToType;
+    randomWord();
+    timeLeft = defaultTime;
     document.getElementById('score').innerHTML = score;
     document.getElementById('timer').innerHTML = timeLeft + "s";
     document.getElementById('input').addEventListener('change', function () {
