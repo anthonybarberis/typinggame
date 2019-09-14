@@ -56,9 +56,10 @@ var words = [
 
 var score = 0;
 var timeLeft = 0;
-var defaultTime = 10;
+var defaultTime = 5;
 var timer = setInterval(countDown, 100);
-var wordToType = ""
+var wordToType = "";
+var maxTime = defaultTime;
 
 function randomWord() {
     wordToType = words[Math.floor(Math.random() * words.length)];
@@ -77,7 +78,7 @@ function countDown() {
 }
 
 function youLose() {
-    alert("You lose!\n\nFinal Score: " + score)
+    alert("You lose!\n\nFinal Score: " + score + "\n\nMax Time: " + maxTime)
     score = 0;
     init();    
 }
@@ -91,6 +92,11 @@ function init() {
     document.getElementById('input').addEventListener('change', function () {
         if (input.value == wordToType) {
             score++;
+            timeLeft ++;
+            timeLeft ++;
+            if (timeLeft > maxTime) {
+                maxTime = timeLeft;
+            }
             randomWord();
         }
         document.getElementById('score').innerHTML = score;
