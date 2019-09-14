@@ -54,8 +54,24 @@ var words = [
 
 ]
 
-var wordToType = words[Math.floor(Math.random() * words.length)];
+function randomWord() {
+    wordToType = words[Math.floor(Math.random() * words.length)];
+}
+
+var wordToType = ""
+randomWord();
+var score = 0;
 
 function init() {
-    document.getElementById('wordToType').innerHTML = wordToType
+    document.getElementById('wordToType').innerHTML = wordToType;
+    document.getElementById('score').innerHTML = score;
+    document.getElementById('input').addEventListener('change', function () {
+        if (input.value == wordToType) {
+            score++;
+            randomWord();
+        }
+        document.getElementById('score').innerHTML = score;
+        document.getElementById('wordToType').innerHTML = wordToType;
+        input.value = "";
+    })
 }
