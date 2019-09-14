@@ -54,24 +54,41 @@ var words = [
 
 ]
 
+var score = 0;
+var timeLeft = 5.0;
+var timer = setInterval(countDown, 100);
+var wordToType = ""
+
 function randomWord() {
     wordToType = words[Math.floor(Math.random() * words.length)];
+    document.getElementById('wordToType').innerHTML = wordToType;
 }
 
-var wordToType = ""
+function countDown() {
+    if (timeLeft <= 0) {
+        youLose();
+    }
+    else {
+        timeLeft -= .1;
+        timeLeft = timeLeft.toFixed(1);
+        document.getElementById('timer').innerHTML = timeLeft + "s";
+    }
+}
+
 randomWord();
-var score = 0;
 
 function init() {
     document.getElementById('wordToType').innerHTML = wordToType;
     document.getElementById('score').innerHTML = score;
+    document.getElementById('timer').innerHTML = timeLeft + "s";
     document.getElementById('input').addEventListener('change', function () {
         if (input.value == wordToType) {
             score++;
             randomWord();
         }
         document.getElementById('score').innerHTML = score;
-        document.getElementById('wordToType').innerHTML = wordToType;
         input.value = "";
     })
+
+    countDown();
 }
